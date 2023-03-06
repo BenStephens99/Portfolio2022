@@ -1,0 +1,31 @@
+#energyApp {
+    top: 0em;
+    position: absolute;
+    z-index: 6;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;  
+}
+
+#energyApp .text {
+    width: 35em;
+    max-width: 98%;
+}
+
+#energyApp .box-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+}
+
+#energyApp .svg img{
+    width: 5em;
+}
+
+@media screen and (max-width: 600px) {
+    #energyApp {
+        position: relative;
+    }
+}

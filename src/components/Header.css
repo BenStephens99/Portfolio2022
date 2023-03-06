@@ -1,0 +1,95 @@
+header {
+  box-shadow: 0 0 5px var(--fontColor);
+  height: var(--headerHeight);
+  width: calc(100vw);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  animation-name: slide-header;
+  animation-duration: 900ms;  
+  animation-delay: 700ms;
+  animation-timing-function: ease-in-out;
+}
+
+header {
+  background-color: var(--backgroundColor);
+  color: var(--fontColor);
+}
+
+.dark header {
+  box-shadow: none;
+  border-bottom: 1px solid var(--fontColor);
+}
+
+.menu-button{
+  display: none;
+}
+
+.contact-button {
+  height: 100%;
+  width: 16em;
+  border: none;
+  background-color: var(--fontColor);
+  font-weight: bold;
+  text-align: center;
+}
+
+.contact-button:hover {
+  background-color: var(--middleColor);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) { 
+  .contact-button {
+      width: 10em;
+  }
+}
+
+@keyframes slide-header {
+  0% {
+    top: -200px;
+  }
+  20% {
+    top: 50px;
+  }
+  55% {
+    top: -20px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+header h3 {
+  margin-left: 3em;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+header h3:hover {
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 600px) {
+  header h3 {
+    margin-left: 1em;
+  }
+
+  .contact-button {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+    height: 100%;
+    width: 10em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

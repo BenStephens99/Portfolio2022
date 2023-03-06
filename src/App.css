@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap');
+
+:root {
+  --fontColor: #514644;
+  --middleColor: #b79c99;
+  --backgroundColor: #efc8b1;
+
+  --headerHeight: 5em;
+  --asideWidth: 8em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--fontColor);
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+.App {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.App {
+  background-color: var(--fontColor);
+}
+
+main {
+  background-color: var(--fontColor);
+}
+
+#mySkills,
+#intro,
+footer {
+  animation-duration: 1.2s;
+  animation-fill-mode: backwards;
+}
+
+.delay-two-half {
+  animation-delay: 2.5s;
+}
+
+.no-delay {
+  animation-delay: 0s;
+}
+
+#header,
+#aside {
+  animation-fill-mode: backwards;
+}
+
+button {
+  padding: 1em 2em;
+  border: none;
+  background-color: var(--fontColor);
+  color: var(--backgroundColor);
+  font-size: 0.8em;
+}
+
+button:hover {
+  background-color: var(--middleColor);
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+.light .svg {
+  filter: invert(23%) sepia(2%) saturate(4037%) hue-rotate(321deg) brightness(89%) contrast(74%);
+}
+
+.dark .svg {
+  filter: invert(87%) sepia(3%) saturate(2980%) hue-rotate(328deg) brightness(92%) contrast(104%);
+}
+
+#mainContainer {
+  position: absolute;
+  top: var(--headerHeight);
+  left: var(--asideWidth);
+  width: calc(100vw - var(--asideWidth));
+  height: calc(100vh - var(--headerHeight));
+  background-color: inherit;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: var(--fontColor);
+}
+
+main {
+  position: absolute;
+  background-color: inherit;
+  top: 0em;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%);
+  color: var(--fontColor);
+  will-change: width;
+  will-change: font-size;
+  will-change: transform;
+  will-change: top;
+}
+
+.dark {
+  box-shadow: none;
+  border: 1px solid var(--backgroundColor);
+}
+
+.dark main {
+  background-color: var(--backgroundColor);
+}
+
+.dark #mainContainer {
+  background-color: var(--backgroundColor);
+}
+
+.title-large {
+  font-size: 3em;
+  line-height: 90%;
+  color: var(--fontColor);
+}
+
+.title-large.shadow {
+  color: var(--backgroundColor);
+  text-shadow: 2px 2px 8px var(--fontColor);
+}
+
+.title-medium {
+  font-size: 2.5em;
+  line-height: 98%;
+  color: var(--fontColor);
+}
+
+.title-medium.shadow {
+  color: var(--backgroundColor);
+  text-shadow: 2px 2px 8px var(--fontColor);
+}
+
+.dark .shadow {
+  text-shadow: none;
+  color: var(--fontColor);
+}
+
+.text p {
+  margin: 1em 0;
+}
+
+.box {
+  box-shadow: 0 0 3px var(--fontColor);
+}
+
+.dark .box {
+  box-shadow: none;
+  border: 1px solid var(--fontColor);
+}
+
+.box {
+  background-color: var(--backgroundColor);
+}
+
+.box-content {
+  padding: 2em 5em;
+}
+
+.profile-image {
+  border-radius: 50%;
+}
+
+.hide-card {
+  animation-name: go-behind;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+
+.show-card {
+  animation-name: come-forward;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+.home.hide-card {
+  animation: none;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--backgroundColor);
+  box-shadow: inset 0 0 2px var(--fontColor);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--fontColor);
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--middleColor);
+}
+
+
+.underline-on-hover {
+  display: inline-flex;
+  align-items: center;
+  height: auto;
+  gap: 0.5em;
+  padding-bottom: 0.5em;
+  font-weight: bold;
+  position: relative;
+}
+
+.underline-on-hover img {
+  height: 2em;
+  margin: auto;
+}
+
+.underline-on-hover:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: 0.5em;
+  transition: 0.7s;
+  background-color: var(--fontColor)
+}
+
+.underline-on-hover:hover:after {
+  width: 100%
+}
+
+.underline-on-hover:hover {
+  cursor: pointer;
+}
+
+
+@keyframes go-up {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -100vh;
+  }
+}
+
+@keyframes come-forward {
+  0% {
+    top: 4em;
+    transform: translate(150%);
+    width: 85%;
+  }
+
+  45% {
+    transform: translate(-50%);
+    font-size: 85%;
+  }
+
+  70% {
+    top: 4em;
+    width: 85%;
+    font-size: 85%;
+  }
+
+  100% {
+    font-size: 100%;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@keyframes go-behind {
+  25% {
+    top: 4em;
+    width: 85%;
+    font-size: 85%;
+  }
+
+  50% {
+    top: 4em;
+    width: 85%;
+    transform: translateX(-50%);
+    font-size: 85%;
+  }
+
+  100% {
+    top: 4em;
+    width: 85%;
+    transform: translateX(-200%);
+    font-size: 85%;
+    display: none;
+  }
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 650px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  #mainContainer {
+    position: relative;
+    top: var(--headerHeight);
+    width: 100vw;
+    height: auto ;
+    left: 0;
+  }
+
+  main {
+    position: relative;
+    background-color: inherit;
+    top: 0em;
+    z-index: 6;
+    width: 100%;
+    height: auto;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  /* Hide Border Mobile */
+  .box { 
+    width: calc(100% + 1px);
+    position: relative;
+    left: -1px;
+  }
+
+  .box-content {
+    padding: 1.5em;
+  }
+
+ 
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .App {
+    font-size: 0.7em;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .App {
+    font-size: 0.7em;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .App {
+    font-size: 1em;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1701px) {
+  .App {
+    font-size: 1.25em;
+  }
+}
+
+
+@media only screen and (min-height: 600px) {
+
+
+}
